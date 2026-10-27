@@ -63,6 +63,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--only-no-website", action="store_true", default=True)
+    ap.add_argument("--all", dest="only_no_website", action="store_false")
     args = ap.parse_args()
     todo = load_todo(args.only_no_website)
     if args.limit:
